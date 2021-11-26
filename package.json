@@ -5,7 +5,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,less,sass,scss}": [
+      "stylelint --fix"
+    ]
   },
   "dependencies": {
     "next": "12.0.4",
@@ -17,6 +27,8 @@
     "@types/react": "17.0.37",
     "eslint": "7",
     "eslint-config-next": "12.0.4",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2",
     "typescript": "4.5.2"
   }
 }
