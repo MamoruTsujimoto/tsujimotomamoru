@@ -7,14 +7,10 @@ const TIMEOUT = config.setting.transition.timeout
 
 const globalStyles = css`
   :root {
-    --gap-quarter: 0.25rem;
-    --gap-half: 0.5rem;
-    --gap: 1rem;
     --main-content: 45rem;
-    --background: ${colors.light.background};
-    --border: ${colors.light.border};
-    --text: ${colors.light.text};
-    --textLight: ${colors.light.textLight};
+    --background: ${colors.primary};
+    --border: ${colors.border};
+    --text: ${colors.tertiary};
   }
 
   /*
@@ -101,7 +97,6 @@ const globalStyles = css`
   ::before {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-text-size-adjust: none;
-    box-sizing: border-box;
   }
 
   html,
@@ -175,6 +170,11 @@ const globalStyles = css`
         color: #999;
       }
     }
+  }
+
+  a {
+    color: var(--text);
+    text-decoration: none;
   }
 
   button {
