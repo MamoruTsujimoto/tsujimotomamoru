@@ -1,9 +1,11 @@
 import Link from 'next/link'
 
 const StoryPast = () => {
-  const stories = [...Array(12).keys()].map((val) => {
+  const stories = [...Array(15).keys()].map((val) => {
+    let num = val < 9 ? '0' + (val + 1) : val + 1
     return {
       id: val,
+      figure: `/img/figure/figure-${num}.jpg`,
       category: 'Diary',
       title: 'Sample Title',
       publish: 'December 2, 2021 - 22℃',
@@ -18,10 +20,7 @@ const StoryPast = () => {
         {stories.map((story) => (
           <article key={story.id}>
             <a href='post/'>
-              <div
-                className='story-figure figure'
-                style={{ backgroundImage: `url('/img/figure/figure-04.jpg')` }}
-              ></div>
+              <div className='story-figure figure' style={{ backgroundImage: `url(${story.figure})` }}></div>
               <div className='story-entrance'>
                 <span className='story-category'>{story.category}</span>
                 <h1>{story.title}</h1>
