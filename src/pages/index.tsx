@@ -4,7 +4,8 @@ import Head from 'next/head'
 import config from 'utils/config'
 import Layout from 'Layout/Layout'
 
-import NewStory from 'components/Story/StoryNew'
+import StoryNew from 'components/Story/StoryNew'
+import StoryPast from 'components/Story/StoryPast'
 
 const Home: NextPage = () => {
   return (
@@ -20,7 +21,8 @@ const Home: NextPage = () => {
       </Head>
 
       <Layout>
-        <NewStory />
+        <StoryNew />
+        <StoryPast />
       </Layout>
     </>
   )

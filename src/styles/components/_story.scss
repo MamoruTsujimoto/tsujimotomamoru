@@ -1,8 +1,8 @@
 .story {
   &-past {
-    opacity: 0;
-    transform: translateY(50px);
-    transition-duration: .6s;
+    // opacity: 0;
+    // transform: translateY(50px);
+    // transition-duration: .6s;
 
     article {
       position: relative;
@@ -35,11 +35,12 @@
         position: relative;
         margin: 10px 0 50px;
         min-height: 80px;
-        font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+        font-family: 'ヒラギノ明朝 ProN W3', HiraMinProN-W3, YuMincho, 游明朝, 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝',
+          serif;
 
-        @include font-size(24,40);
+        @include font-size(24, 40);
 
-        letter-spacing: .15em;
+        letter-spacing: 0.15em;
 
         @media #{$small} {
           min-height: auto;
@@ -47,7 +48,7 @@
         }
 
         &:before {
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           bottom: -15px;
@@ -59,7 +60,7 @@
         }
 
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           bottom: -15px;
@@ -89,7 +90,7 @@
       }
 
       .story-publish {
-        color: #4B4B4B;
+        color: #4b4b4b;
       }
     }
 
@@ -100,11 +101,11 @@
   }
 
   &-category {
-    @include font-size(12,12);
+    @include font-size(12, 12);
 
     font-family: $font-family-raleway;
 
-    color: #4B4B4B;
+    color: #4b4b4b;
   }
 
   &-status {
@@ -119,16 +120,16 @@
 
   &-information {
     width: 355px;
-      width: 100%;
+    width: 100%;
     margin: auto;
 
     p {
-      @include font-size(14,22);
+      @include font-size(14, 22);
 
       color: #333;
 
       &:first-letter {
-        @include font-size(20,22);
+        @include font-size(20, 22);
 
         color: #111;
       }
@@ -136,9 +137,9 @@
   }
 
   &-publish {
-    @include font-size(11,11);
+    @include font-size(11, 11);
 
-    color: #B8B8B8;
+    color: #b8b8b8;
   }
 
   &-figure {
@@ -160,7 +161,7 @@
     }
 
     &.outline {
-      border: 1px solid #DDDDDD;
+      border: 1px solid #dddddd;
 
       @media #{$small} {
         border: none;
