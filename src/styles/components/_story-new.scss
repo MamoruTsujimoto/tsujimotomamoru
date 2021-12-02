@@ -1,0 +1,200 @@
+#new {
+  &-story {
+    position: relative;
+    height: 580px;
+
+    @media #{$small} {
+      height: auto;
+    }
+
+    article {
+      a {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+
+        @media #{$small} {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        &:hover {
+          h1 {
+            &:before {
+              width: 100px;
+            }
+          }
+
+          #new-story-image .new-image {
+            opacity: 1;
+            filter: grayscale(0);
+          }
+
+          .btn-readmore {
+            background-color: #fff;
+            color: #222222;
+          }
+        }
+      }
+    }
+
+    h1 {
+      position: relative;
+      font-family: 'ヒラギノ明朝 ProN W3', HiraMinProN-W3, YuMincho, 游明朝, 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝',
+        serif;
+
+      @include font-size(24, 40);
+
+      letter-spacing: 0.15em;
+      color: #fff;
+
+      @media #{$small} {
+        margin-bottom: 40px;
+      }
+
+      a {
+        display: block;
+        color: #fff;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+        width: 30px;
+        height: 2px;
+        background-color: #fff;
+        z-index: 2;
+        transition: all 200ms 0s ease;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+        width: 100px;
+        height: 2px;
+        background-color: #464646;
+      }
+
+      &:hover {
+        &:before {
+          width: 100px;
+        }
+      }
+    }
+
+    &-entrance {
+      position: relative;
+      width: 380px;
+      padding: 50px;
+      background-color: #222;
+
+      @media #{$small} {
+        order: 2;
+        width: 100%;
+        padding: 30px;
+      }
+    }
+
+    &-information {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 85px;
+      width: 277px;
+      width: calc(277 / 380 * 100%);
+      margin: auto;
+
+      @media #{$small} {
+        position: static;
+        width: 100%;
+        margin: 0 0 50px;
+      }
+
+      p {
+        @include font-size(14, 22);
+
+        color: #bbbbbb;
+
+        &:first-letter {
+          @include font-size(18, 22);
+
+          color: #fff;
+        }
+      }
+    }
+
+    &-image {
+      width: 100%;
+      height: 580px;
+      overflow: hidden;
+      background-color: #000;
+
+      @media #{$small} {
+        height: 100vh;
+      }
+
+      .new-image {
+        width: 100%;
+        height: 580px;
+        background-position: center center;
+        background-size: cover;
+        filter: grayscale(100%);
+        transition: all 1500ms 0s ease;
+
+        @media #{$small} {
+          order: 1;
+          height: 100vh;
+          filter: none;
+        }
+
+        &.no-image {
+          background: #fff url(#{$IMG_PATH}/no-image.svg) center center no-repeat;
+          background-size: 100px auto;
+          border: 1px solid #ddd;
+        }
+
+        &.outline {
+          border: 1px solid #222222;
+
+          @media #{$small} {
+            border: none;
+            border-top: 1px solid $color-border;
+          }
+        }
+
+        &.right {
+          @media #{$small} {
+            background-position: center right;
+          }
+        }
+
+        &.left {
+          @media #{$small} {
+            background-position: center left;
+          }
+        }
+      }
+    }
+
+    .btn-readmore {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 25px;
+      margin: auto;
+
+      @media #{$small} {
+        position: static;
+      }
+    }
+
+    .story {
+      &-category {
+        color: #b7b7b7;
+      }
+    }
+  }
+}

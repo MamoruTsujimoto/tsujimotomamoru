@@ -172,6 +172,12 @@ const globalStyles = css`
     }
   }
 
+  section {
+    position: relative;
+    max-width: 100%;
+    margin: 50px auto 105px;
+  }
+
   a {
     color: var(--text);
     text-decoration: none;

@@ -4,6 +4,8 @@ import Head from 'next/head'
 import config from 'utils/config'
 import Layout from 'Layout/Layout'
 
+import NewStory from 'components/Story/StoryNew'
+
 const Home: NextPage = () => {
   return (
     <>
@@ -17,7 +19,9 @@ const Home: NextPage = () => {
         <meta name='twitter:image' content={config.info.ogp.image} />
       </Head>
 
-      <Layout></Layout>
+      <Layout>
+        <NewStory />
+      </Layout>
     </>
   )
 }
