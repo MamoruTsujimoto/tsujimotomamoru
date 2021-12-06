@@ -15,7 +15,10 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "src",
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

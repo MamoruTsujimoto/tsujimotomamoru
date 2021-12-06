@@ -1,39 +1,38 @@
 import Link from 'next/link'
 
-const StoryPast = () => {
-  const stories = [...Array(15).keys()].map((val) => {
-    let num = val < 9 ? '0' + (val + 1) : val + 1
-    return {
-      id: val,
-      figure: `/img/figure/figure-${num}.jpg`,
-      category: 'Diary',
-      title: 'Sample Title',
-      publish: 'December 2, 2021 - 22℃',
-      description: 'Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text.',
-    }
-  })
+import Post from 'types/post'
+import DateFormatter from 'components/DateFormatter'
 
+type Props = {
+  posts: Post[]
+}
+
+const StoryPast = ({ posts }: Props) => {
   return (
     <section className='story-past'>
-      <h1 className='section-title'>diary</h1>
+      <h1 className='section-title'>articles</h1>
       <div className='article-wrapper'>
-        {stories.map((story) => (
-          <article key={story.id}>
-            <a href='post/'>
-              <div className='story-figure figure' style={{ backgroundImage: `url(${story.figure})` }}></div>
-              <div className='story-entrance'>
-                <span className='story-category'>{story.category}</span>
-                <h1>{story.title}</h1>
-                <div className='story-information'>
-                  <ul className='story-status'>
-                    <li>
-                      <span className='story-publish'>{story.publish}</span>
-                    </li>
-                  </ul>
-                  <p>{story.description}</p>
+        {posts.map((post) => (
+          <article key={post.slug}>
+            <Link as={`/posts/${post.slug}`} href='/posts/[slug]' passHref>
+              <a>
+                <div className='story-figure figure' style={{ backgroundImage: `url(${post.coverImage})` }}></div>
+                <div className='story-entrance'>
+                  <span className='story-category'>{post.category}</span>
+                  <h1>{post.title}</h1>
+                  <div className='story-information'>
+                    <ul className='story-status'>
+                      <li>
+                        <span className='story-publish'>
+                          <DateFormatter dateString={post.date} />
+                        </span>
+                      </li>
+                    </ul>
+                    <p>{post.excerpt}</p>
+                  </div>
                 </div>
-              </div>
-            </a>
+              </a>
+            </Link>
           </article>
         ))}
       </div>

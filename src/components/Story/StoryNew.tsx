@@ -1,29 +1,41 @@
 import Link from 'next/link'
+import Author from 'types/author'
 
-const StoryNew = () => {
+import DateFormatter from 'components/DateFormatter'
+
+type Props = {
+  title: string
+  excerpt: string
+  category: string
+  coverImage: string
+  date: string
+  author: Author
+  slug: string
+}
+
+const StoryNew = ({ title, excerpt, category, coverImage, date, author, slug }: Props) => {
   return (
     <section id='new-story'>
       <article id='story01'>
-        <Link href='/' passHref={true}>
+        <Link as={`/posts/${slug}`} href='/posts/[slug]' passHref>
           <a>
             <div id='new-story-entrance'>
-              <span className='story-category'>Diary</span>
-              <h1>Sample Title</h1>
+              <span className='story-category'>{category}</span>
+              <h1>{title}</h1>
               <div id='new-story-information'>
                 <ul className='story-status'>
                   <li>
-                    <span className='story-publish'>December 2, 2021 - 22℃</span>
+                    <span className='story-publish'>
+                      <DateFormatter dateString={date} />
+                    </span>
                   </li>
                 </ul>
-                <p>Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text Sample Text.</p>
+                <p>{excerpt}</p>
               </div>
               <div className='btn btn-readmore'>read more</div>
             </div>
             <div id='new-story-image'>
-              <div
-                className='new-image outline zoom'
-                style={{ backgroundImage: `url('/img/figure/figure-14.jpg')` }}
-              ></div>
+              <div className='new-image outline zoom' style={{ backgroundImage: `url('${coverImage}` }}></div>
             </div>
           </a>
         </Link>
