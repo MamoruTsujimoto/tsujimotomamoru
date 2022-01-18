@@ -54,7 +54,7 @@ const Single = ({ post }: Props) => {
                       className='article-eyecatch-image outline'
                       style={{ backgroundImage: `url(${post.coverImage})` }}
                     ></div>
-                    <figcaption></figcaption>
+                    <figcaption>{post.coverCaption}</figcaption>
                   </figure>
                 </header>
                 <div className='article-body'>
@@ -88,6 +88,7 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'ogImage',
     'coverImage',
+    'coverCaption',
     'weather',
   ])
   const content = await functions.MarkdownToHtml(post.content || '')

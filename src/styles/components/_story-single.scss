@@ -33,15 +33,16 @@
         width: $width-single;
         color: #404040;
         text-align: center;
-        font-family: "ヒラギノ明朝 ProN W3", HiraMinProN-W3, YuMincho, 游明朝, "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
-        letter-spacing: .1em;
+        font-family: 'ヒラギノ明朝 ProN W3', HiraMinProN-W3, YuMincho, 游明朝, 'ＭＳ Ｐ明朝', 'MS PMincho', 'MS 明朝',
+          serif;
+        letter-spacing: 0.1em;
 
         @media #{$small} {
           margin: 40px 0 15px;
           width: 100%;
           padding: 0 20px;
 
-          @include font-size(25,37);
+          @include font-size(25, 37);
         }
       }
     }
@@ -50,7 +51,11 @@
       margin: 50px 0;
     }
 
-    h2,h3,h4,h5,h6 {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       position: relative;
 
       &:before {
@@ -75,16 +80,14 @@
       }
     }
 
-    h1+*, h2+*, h3+*, h4+*, h5+*, h6+* {
-      margin-top: .8em;
+    h1 + *,
+    h2 + *,
+    h3 + *,
+    h4 + *,
+    h5 + *,
+    h6 + * {
+      margin-top: 0.8em;
     }
-
-    h3 {
-      &:before {
-        width: 5%;
-      }
-    }
-
 
     &-eyecatch {
       margin: 10px auto 0;
@@ -92,10 +95,11 @@
 
       &-image {
         width: 100%;
-        height: 100vh;
+        height: 500px;
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
+        background-attachment: fixed;
 
         &.outline {
           border-top: 1px solid $color-border;
@@ -105,7 +109,7 @@
           @media #{$small} {
             margin-top: 10px;
             border: none;
-            border-top: 1px solid #E9E9EB;
+            border-top: 1px solid #e9e9eb;
           }
         }
 
@@ -127,7 +131,7 @@
         opacity: 0;
         transition: 0.5s;
         text-align: right;
-        @include font-size(12,12);
+        @include font-size(12, 12);
         font-weight: bold;
 
         @media #{$small} {
@@ -138,7 +142,7 @@
       }
 
       &:hover {
-        box-shadow: 0 10px 90px -30px rgba(0,0,0,0.4);
+        box-shadow: 0 10px 90px -30px rgba(0, 0, 0, 0.4);
 
         @media #{$small} {
           box-shadow: none;
@@ -148,7 +152,7 @@
           border-color: #000;
 
           @media #{$small} {
-            border-color: #E9E9EB;
+            border-color: #e9e9eb;
           }
         }
 
@@ -222,11 +226,11 @@
             color: #fff;
           }
         }
-        &[target="_blank"] {
+        &[target='_blank'] {
           padding: 0 20px 1px 4px;
 
           &:after {
-            content: "\e900";
+            content: '\e900';
             position: absolute;
             top: 3px;
             right: 3px;
@@ -235,7 +239,7 @@
             font-weight: normal;
             font-variant: normal;
 
-            @include font-size(12,12);
+            @include font-size(12, 12);
 
             color: #333;
 
@@ -259,11 +263,15 @@
         margin-top: 1em;
         margin-bottom: 1em;
 
-        @include font-size(17,32);
+        @include font-size(17, 32);
 
-        letter-spacing: .025em;
+        letter-spacing: 0.025em;
 
-        &+h2,&+h3,&+h4,&+h5,&+h6 {
+        & + h2,
+        & + h3,
+        & + h4,
+        & + h5,
+        & + h6 {
           margin-top: 50px;
         }
 
@@ -278,7 +286,7 @@
         background-color: #242424;
         color: #fff;
 
-        @include font-size(14,26);
+        @include font-size(14, 26);
 
         cursor: text;
 
@@ -287,18 +295,22 @@
         }
       }
 
-      ul,ol {
+      ul,
+      ol {
         margin: 20px auto;
         padding-left: 30px;
         list-style: circle;
 
         li {
           margin: 10px 0;
+
+          @include font-size(14, 26);
         }
       }
 
       table {
-        margin: 20px auto;
+        width: 100%;
+        margin: 40px auto;
         border-collapse: collapse;
 
         caption {
@@ -306,9 +318,12 @@
           caption-side: bottom;
         }
 
-        th,td {
+        th,
+        td {
           padding: 10px;
           border: 1px solid #dcd6d9;
+
+          @include font-size(14, 26);
         }
 
         th {
@@ -321,13 +336,13 @@
         position: relative;
 
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           left: 0;
           bottom: 0;
           width: 100%;
           height: 5px;
-          border: 3px solid rgba(0,0,0,0.1);
+          border: 3px solid rgba(0, 0, 0, 0.1);
         }
       }
 
@@ -351,7 +366,7 @@
         figcaption {
           padding: 10px 5px;
 
-          @include font-size(12,12);
+          @include font-size(12, 12);
 
           text-align: right;
         }
@@ -383,7 +398,7 @@
         li {
           display: inline-block;
 
-          @include font-size(12,12);
+          @include font-size(12, 12);
 
           vertical-align: top;
 
@@ -414,7 +429,7 @@
       &-tag {
         margin: 0;
 
-        @include font-size(12,24);
+        @include font-size(12, 24);
 
         &-heading {
           text-align: center;
@@ -464,7 +479,7 @@
           }
 
           a {
-            @include font-size(13,13);
+            @include font-size(13, 13);
 
             &:before {
               content: '';
@@ -474,7 +489,7 @@
               width: 11px;
               height: 11px;
               border-top: 1px solid #000;
-              @include font-size(11,11);
+              @include font-size(11, 11);
               transition: all 0.2s ease-out;
             }
           }
@@ -492,12 +507,12 @@
           &:before {
             left: 0;
             border-left: 1px solid #000;
-            transform: translate3d(0,0,0) rotate(-45deg);
+            transform: translate3d(0, 0, 0) rotate(-45deg);
           }
 
           &:hover {
             &:before {
-              transform: translate3d(-5px,0,0) rotate(-45deg);
+              transform: translate3d(-5px, 0, 0) rotate(-45deg);
             }
           }
         }
@@ -514,12 +529,12 @@
           &:before {
             right: 0;
             border-right: 1px solid #000;
-            transform: translate3d(0,0,0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
           }
 
           &:hover {
             &:before {
-              transform: translate3d(5px,0,0) rotate(45deg);
+              transform: translate3d(5px, 0, 0) rotate(45deg);
             }
           }
         }
@@ -566,7 +581,7 @@
           position: absolute;
           width: 100%;
           height: 100%;
-          background-color: rgba(0,0,0,0.5);
+          background-color: rgba(0, 0, 0, 0.5);
         }
       }
 
@@ -575,7 +590,7 @@
         padding: 5px;
         width: calc(100% / 2 - 10px);
         height: 100px;
-        background-color: rgba(255,255,255,.8);
+        background-color: rgba(255, 255, 255, 0.8);
 
         &-figure {
           width: 180px;
@@ -594,9 +609,9 @@
         color: #fff;
         z-index: 2;
 
-        @include font-size(12,12);
+        @include font-size(12, 12);
 
-        letter-spacing: .15em;
+        letter-spacing: 0.15em;
       }
     }
     &-video {

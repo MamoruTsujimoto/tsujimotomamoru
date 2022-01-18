@@ -7,6 +7,7 @@ type PostType = {
   category: string
   date: string
   coverImage: string
+  coverCaption: string
   author: Author
   ogImage: {
     url: string
