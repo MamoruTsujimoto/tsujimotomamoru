@@ -133,7 +133,6 @@
       background-color: #000;
 
       @media #{$small} {
-        height: 100vh;
       }
 
       .new-image {
@@ -146,7 +145,6 @@
 
         @media #{$small} {
           order: 1;
-          height: 100vh;
           filter: none;
           transition: none;
         }

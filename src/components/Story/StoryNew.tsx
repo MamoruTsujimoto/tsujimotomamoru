@@ -35,7 +35,7 @@ const StoryNew = ({ title, excerpt, category, coverImage, date, author, slug }: 
               <div className='btn btn-readmore'>read more</div>
             </div>
             <div id='new-story-image'>
-              <div className='new-image outline zoom' style={{ backgroundImage: `url('${coverImage}` }}></div>
+              <div className='new-image outline' style={{ backgroundImage: `url('${coverImage}` }}></div>
             </div>
           </a>
         </Link>
