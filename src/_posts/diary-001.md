@@ -1,74 +1,33 @@
 ---
 slug: 'diary-001'
-title: 'Sample Title'
-excerpt: 'Sample Excerpt.Sample Excerpt.Sample Excerpt.Sample Excerpt.Sample Excerpt.Sample Excerpt.Sample Excerpt.'
+title: 'ブログサイト開設しました🍾'
+excerpt: '学習と開発に１年近く費やしましたがようやく開設することができました！'
 category: 'diary'
 coverImage: '/img/posts/figure-14.jpg'
-coverCaption: '2021-12-06 SKY'
-date: '2021-12-06'
+coverCaption: '2022-01-19 SKY'
+date: '2022-01-19'
 ogImage:
   url: '/img/posts/figure-14.jpg'
 weather: 'sun'
 ---
 
-## 見出し 2
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
+## 学習と開発に１年近く費やしました
+これまで仕事もプライベートも WordPress が中心でしたが、前々から興味のあった技術を勉強したい意欲が湧いて、先人達の知恵をふんだんに参考にしながら Next.js/TypeScript + Markdown + Vercel の組み合わせで実装してみました。
 
-### 見出し 3
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
+## Next.js/TypeScript
+サイトのコアになるのは Reactフレームワーク の Next.js を使っています。React/TypeScriptは案件でほんの少し触れた程度でさっぱりわからないが続いてましたが、
+コロナ禍なこともあり、自宅にいる時間が余計に増えた（元々リモートワーク）ので、Udemyを受講したり、サンプルをいじったり黙々と学習と開発をしていました。
 
-#### 見出し 4
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
+TypeScriptを案件を通していい考えだなと、なんとなく肌で感じてエラーばかりで嫌になりかけるも少しずつ理解できるように。根気よく、粘り強く、疲れたら時間空けるが丁度いいのかも。
 
-##### 見出し 5
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
+## Markdown
+Markdownはメモを残すときに使うので記事を書くのも馴染み深く、サイトの表示も今の所満足してる。SyntaxHighlighterがまだ導入できてないので、おいおいかなぁ。
 
-###### 見出し 6
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
-
-段落 1
-
-段落 2
-
-改行  改行
-
-- リスト1
-    - リスト1_1
-        - リスト1_1_1
-        - リスト1_1_2
-    - リスト1_2
-- リスト2
-- リスト3
-
-1. 番号付きリスト1
-    1. 番号付きリスト1-1
-    1. 番号付きリスト1-2
-1. 番号付きリスト2
-1. 番号付きリスト3
-
-[Google](https://www.google.co.jp/)
-
-これは *イタリック* です
-これは _イタリック_ です
-
-これは **ボールド** です
-これは __ボールド__ です
-
-これは ***イタリック＆ボールド*** です
-これは ___イタリック＆ボールド___ です
-
-![代替文字列](/img/posts/figure-14.jpg "タイトル")
-
-| Branch  | Commit           |
-| ------- | ---------------- |
-| main    | 0123456789abcdef |
-| staging | fedcba9876543210 |
-
-｀｀｀js
-const some = 'test'
-｀｀｀
+## Vercel
+デプロイは Next.js を開発している Vercel で行っていて、今の所は無料で使えて、独自ドメインも割り当てられるスグレモノ。
 
 ---
 
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
-Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.Sample Text.
+まだ業務レベルには達してはいませんが「趣味でNext.jsをやっている者だ」と言えるかな。
+
+あぁ、そうだ。プロフィールページも作ったほうが良いかもね。君は誰だい？って感じですね。
