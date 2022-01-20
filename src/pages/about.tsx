@@ -1,23 +1,20 @@
-import React from 'react'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { getAllPosts } from 'api/api'
+import { getAbout } from 'api/api'
 import Post from 'types/post'
 
 import config from 'utils/config'
 import Layout from 'Layout/Layout'
 
-import StoryNew from 'components/Story/StoryNew'
-import StoryPast from 'components/Story/StoryPast'
+import AboutPost from 'components/About/AboutPost'
 
 type Props = {
-  allPosts: Post[]
+  aboutPosts: Post[]
 }
 
-const Index: NextPage<Props> = ({ allPosts }) => {
-  const newPost = allPosts[0]
-  const pastPost = allPosts.slice(1)
+const About: NextPage<Props> = ({ aboutPosts }) => {
+  const about = aboutPosts[0]
 
   return (
     <>
@@ -32,29 +29,28 @@ const Index: NextPage<Props> = ({ allPosts }) => {
       </Head>
 
       <Layout>
-        {newPost && (
-          <StoryNew
-            title={newPost.title}
-            excerpt={newPost.excerpt}
-            category={newPost.category}
-            coverImage={newPost.coverImage}
-            date={newPost.date}
-            author={newPost.author}
-            slug={newPost.slug}
+        {about && (
+          <AboutPost
+            title={about.title}
+            excerpt={about.excerpt}
+            category={about.category}
+            coverImage={about.coverImage}
+            date={about.date}
+            author={about.author}
+            slug={about.slug}
           />
         )}
-        {pastPost.length > 0 ? <StoryPast posts={pastPost} /> : ''}
       </Layout>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPosts = getAllPosts(['title', 'excerpt', 'category', 'date', 'slug', 'author', 'coverImage', 'weather'])
+  const aboutPosts = getAbout(['title', 'excerpt', 'category', 'date', 'slug', 'author', 'coverImage', 'weather'])
 
   return {
-    props: { allPosts },
+    props: { aboutPosts },
   }
 }
 
-export default Index
+export default About

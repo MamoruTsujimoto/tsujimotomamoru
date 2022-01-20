@@ -9,7 +9,10 @@ const Header = () => {
     <Root>
       <Welcome>
         <h1>
-          <Link href='/'>{config.info.siteName}</Link>
+          <Link href='/'>{config.info.siteNameFirst}</Link>
+          <Link href='/about' passHref>
+            <strong>{config.info.siteNameSecond}</strong>
+          </Link>
         </h1>
       </Welcome>
     </Root>

@@ -1,6 +1,8 @@
 const config = {
   info: {
     siteName: 'Tsujimoto Mamoru',
+    siteNameFirst: 'Tsujimoto ',
+    siteNameSecond: 'Mamoru',
     siteDescription: '',
     siteURL: 'https://tsujimotomamoru.com',
     ogp: {

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Author from 'types/author'
 
+import * as gtag from 'lib/gtag'
+
 import DateFormatter from 'components/DateFormatter'
 
 type Props = {
@@ -14,11 +16,19 @@ type Props = {
 }
 
 const StoryNew = ({ title, excerpt, category, coverImage, date, author, slug }: Props) => {
+  const handleClick = () => {
+    gtag.event({
+      action: 'click',
+      category: 'Link',
+      label: 'event',
+    })
+  }
+
   return (
     <section id='new-story'>
       <article id='story01'>
         <Link as={`/posts/${slug}`} href='/posts/[slug]' passHref>
-          <a>
+          <a onClick={handleClick}>
             <div id='new-story-entrance'>
               <span className='story-category'>{category}</span>
               <h1>{title}</h1>
