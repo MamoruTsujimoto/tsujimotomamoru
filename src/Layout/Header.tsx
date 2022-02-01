@@ -10,8 +10,10 @@ const Header = () => {
       <Welcome>
         <h1>
           <Link href='/'>{config.info.siteNameFirst}</Link>
-          <Link href='/about' passHref>
-            <strong>{config.info.siteNameSecond}</strong>
+          <Link href='/profile' passHref>
+            <a>
+              <strong>{config.info.siteNameSecond}</strong>
+            </a>
           </Link>
         </h1>
       </Welcome>
