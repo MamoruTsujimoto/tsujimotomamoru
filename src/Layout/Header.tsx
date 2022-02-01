@@ -11,7 +11,9 @@ const Header = () => {
         <h1>
           <Link href='/'>{config.info.siteNameFirst}</Link>
           <Link href='/profile' passHref>
-            <strong>{config.info.siteNameSecond}</strong>
+            <a>
+              <strong>{config.info.siteNameSecond}</strong>
+            </a>
           </Link>
         </h1>
       </Welcome>
