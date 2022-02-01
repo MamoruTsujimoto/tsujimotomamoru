@@ -10,7 +10,7 @@ const Header = () => {
       <Welcome>
         <h1>
           <Link href='/'>{config.info.siteNameFirst}</Link>
-          <Link href='/about' passHref>
+          <Link href='/profile' passHref>
             <strong>{config.info.siteNameSecond}</strong>
           </Link>
         </h1>
