@@ -7,13 +7,16 @@
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
+  opacity: 0;
+  transition: opacity 500ms 0s ease;
+  visibility: hidden;
 
   &-inner {
     position: absolute;
     right: 0;
     width: 350px;
     min-height: 100%;
-    background: rgba(0, 0, 0, .9);
+    background: rgba(0, 0, 0, 0.9);
     transform: translateZ(0);
     overflow: scroll;
 
@@ -24,7 +27,8 @@
   }
 
   &.is-open {
-    display: block;
+    opacity: 1;
+    visibility: visible;
     z-index: 9999;
   }
 
@@ -41,7 +45,7 @@
     top: 10px;
     right: 10px;
     display: inline-block;
-    transition: all .4s;
+    transition: all 0.4s;
     box-sizing: border-box;
     width: 50px;
     height: 44px;
@@ -63,7 +67,7 @@
   &-trigger,
   &-trigger span {
     display: inline-block;
-    transition: all .4s;
+    transition: all 0.4s;
     box-sizing: border-box;
   }
 
@@ -113,13 +117,14 @@
         font-family: $font-family-raleway;
         font-weight: normal;
         text-transform: capitalize;
-        letter-spacing: .2em;
+        letter-spacing: 0.2em;
 
-        @include font-size(18,18);
+        @include font-size(18, 18);
 
         color: #fff;
 
-        &:before,&:after {
+        &:before,
+        &:after {
           bottom: -5px;
         }
 
@@ -146,13 +151,13 @@
 
       ul:not(.sns) {
         li {
-          margin: 0 0 .5em .5em;
+          margin: 0 0 0.5em 0.5em;
           font-family: $font-family-raleway;
           text-transform: capitalize;
-          letter-spacing: .1em;
+          letter-spacing: 0.1em;
 
           a {
-            @include font-size(15,15);
+            @include font-size(15, 15);
 
             color: #fff;
             transition: all 400ms 0s ease;
@@ -168,7 +173,7 @@
             width: 6px;
             height: 6px;
             margin-right: 8px;
-            border: 1px solid #B19764;
+            border: 1px solid #b19764;
             border-radius: 50%;
             vertical-align: 2px;
           }
@@ -196,7 +201,7 @@
           }
 
           img {
-            opacity: .8;
+            opacity: 0.8;
             transition: all 400ms 0s;
           }
         }

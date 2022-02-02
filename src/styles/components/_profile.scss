@@ -6,6 +6,7 @@
   border: 1px solid #d0d0d4;
 
   @media #{$small} {
+    grid-template-columns: 100%;
   }
 
   .left {
@@ -26,7 +27,7 @@
 
       img {
         border-radius: 50%;
-        border: 5px solid #000 !important;
+        border: 2px solid #000 !important;
       }
     }
 

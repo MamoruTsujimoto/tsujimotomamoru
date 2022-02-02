@@ -27,7 +27,7 @@ const config = {
     },
   },
   profile: {
-    names: 'Tsujimoto Sir Christopher Mamoru',
+    names: 'Tsujimoto Mamoru',
     birth: {
       label: '年齢 - Age',
       year: 1982,
@@ -48,7 +48,7 @@ const config = {
       label: '趣味 - Hobby',
       dance: 'Break Dance / House Dance',
       instrument: 'Didgeridoo / Asalato',
-      plant: 'ヘゴ / ヤエヤマヒルギ / 苔',
+      plant: 'ヘゴ / ヤエヤマヒルギ / 苔 / ホワイトゴースト',
       etc: 'モダマ収集',
     },
     skils: {
