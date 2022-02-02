@@ -88,6 +88,10 @@
       background-color: #000;
     }
 
+    &.is-open {
+      display: none;
+    }
+
     &.active {
       span {
         -webkit-font-smoothing: antialiased;
@@ -210,20 +214,14 @@
   }
 }
 
-html {
+#global-wrapper {
   &.is-open {
     overflow: hidden;
+    filter: blur(3px);
+    transform: translateX(-350px);
 
-    #global-wrapper {
-      transform: translateX(-350px);
-
-      @media #{$small} {
-        transform: translateX(-100%);
-      }
+    @media #{$small} {
+      transform: translateX(-100%);
     }
   }
-}
-
-.blur {
-  filter: blur(3px);
 }

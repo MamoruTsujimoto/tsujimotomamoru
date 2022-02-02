@@ -1,4 +1,8 @@
+import { useContext } from 'react'
 import styled from '@emotion/styled'
+
+import { MenuFlagContext } from 'components/providers/MenuFlagProvider'
+import Menu from 'components/Menu'
 
 import styles from 'utils/styles'
 import Header from 'Layout/Header'
@@ -10,11 +14,16 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => {
+  const { openMenu } = useContext(MenuFlagContext)
+
   return (
     <Root>
-      <Header />
-      <Main>{children}</Main>
-      <Footer />
+      <div id='global-wrapper' className={openMenu ? 'is-open' : ''}>
+        <Header />
+        <Main className={openMenu ? 'blur' : ''}>{children}</Main>
+        <Footer />
+      </div>
+      <Menu />
     </Root>
   )
 }
