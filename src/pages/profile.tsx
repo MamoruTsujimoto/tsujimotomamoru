@@ -200,7 +200,7 @@ const Infomation = styled.div`
       h3 {
         position: relative;
         margin: 0 0 10px;
-        font-size: ${styles.mixins.fontSize(16, 32)};
+        ${styles.mixins.fontSize(16, 32)};
 
         &:before {
           content: '';
@@ -227,7 +227,7 @@ const Infomation = styled.div`
       h4 {
         position: relative;
         margin: 10px 0;
-        font-size: ${styles.mixins.fontSize(13, 32)};
+        ${styles.mixins.fontSize(13, 32)};
 
         &:before {
           content: '';
@@ -252,7 +252,7 @@ const Infomation = styled.div`
       }
 
       span {
-        font-size: ${styles.mixins.fontSize(14, 32)};
+        ${styles.mixins.fontSize(14, 32)};
       }
 
       ul {
@@ -274,7 +274,7 @@ const Socials = styled.ul`
 
   li {
     text-align: center;
-    font-size: ${styles.mixins.fontSize(20, 20)};
+    ${styles.mixins.fontSize(20, 20)};
 
     a {
       display: flex;

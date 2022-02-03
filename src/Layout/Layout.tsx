@@ -1,8 +1,8 @@
 import { useContext } from 'react'
 import styled from '@emotion/styled'
 
-import { MenuFlagContext } from 'components/providers/MenuFlagProvider'
-import Menu from 'components/Menu'
+import { MenuFlagContext } from 'components/Providers/MenuFlagProvider'
+import Menu from 'components/Menu/Menu'
 
 import styles from 'utils/styles'
 import Header from 'Layout/Header'
@@ -18,17 +18,44 @@ const Layout = ({ children }: Props) => {
 
   return (
     <Root>
-      <div id='global-wrapper' className={openMenu ? 'is-open' : ''}>
+      <Wrapper className={openMenu ? 'is-open' : ''}>
         <Header />
         <Main className={openMenu ? 'blur' : ''}>{children}</Main>
         <Footer />
-      </div>
+      </Wrapper>
       <Menu />
     </Root>
   )
 }
 
-export default Layout
+const Root = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  transform: translateX(0);
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  background-color: #fff;
+  z-index: 2;
+  will-change: auto;
+
+  @media (max-width: ${styles.sizes.breakpoint.small}px) {
+    width: 100%;
+  }
+`
+
+const Wrapper = styled.div`
+  &.is-open {
+    overflow: hidden;
+    filter: blur(3px);
+    transform: translateX(-350px);
+
+    @media #{$small} {
+      transform: translateX(-100%);
+    }
+  }
+`
 
 const Main = styled.main`
   position: relative;
@@ -53,19 +80,4 @@ const Main = styled.main`
   }
 `
 
-const Root = styled.div`
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  transform: translateX(0);
-  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  background-color: #fff;
-  z-index: 2;
-  will-change: auto;
-
-  @media (max-width: ${styles.sizes.breakpoint.small}px) {
-    width: 100%;
-  }
-`
+export default Layout
