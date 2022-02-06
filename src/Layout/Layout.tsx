@@ -46,6 +46,8 @@ const Root = styled.div`
 `
 
 const Wrapper = styled.div`
+  transition: 0.3s ease-in-out;
+
   &.is-open {
     overflow: hidden;
     filter: blur(3px);
