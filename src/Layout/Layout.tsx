@@ -9,7 +9,6 @@ import Header from 'Layout/Header'
 import Footer from 'Layout/Footer'
 
 type Props = {
-  preview?: boolean
   children: React.ReactNode
 }
 

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import styled from '@emotion/styled'
 import Author from 'types/author'
 import * as gtag from 'lib/gtag'
+import H1 from 'components/Base/H1'
 import styles from 'utils/styles'
 import DateFormatter from 'components/DateFormatter'
 
