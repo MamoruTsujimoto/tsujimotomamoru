@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
 
-import { MenuFlagContext } from 'providers/MenuFlagProvider'
+import { MenuFlagContext } from 'components/providers/MenuFlagProvider'
 import styles from 'utils/styles'
 
 const Menu = () => {
