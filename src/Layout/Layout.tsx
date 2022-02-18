@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import styled from '@emotion/styled'
 
-import { MenuFlagContext } from 'components/Providers/MenuFlagProvider'
+import { MenuFlagContext } from 'providers/MenuFlagProvider'
 import Menu from 'components/Menu/Menu'
 
 import styles from 'utils/styles'
