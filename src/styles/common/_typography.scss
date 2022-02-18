@@ -1,31 +1,31 @@
 // Headings
 h1 {
-  @include font-size(32,44);
+  @include font-size(32, 44);
 }
 
 h2 {
-  @include font-size(22,34);
+  @include font-size(22, 34);
 }
 
 h3 {
-  @include font-size(18,32);
+  @include font-size(18, 32);
 }
 
 h4 {
-  @include font-size(14,28);
+  @include font-size(14, 28);
 }
 
 h5 {
-  @include font-size(12,26);
+  @include font-size(12, 26);
 }
 
 h6 {
-  @include font-size(10,24);
+  @include font-size(10, 24);
 }
 
 // Paragraph Text
 p {
-  @include font-size(16,30);
+  @include font-size(16, 30);
 }
 
 // Text Style
@@ -43,12 +43,12 @@ p {
   }
 
   &-date {
-    color: #9B9B9B;
-    @include font-size(12,30);
+    color: #9b9b9b;
+    @include font-size(12, 30);
   }
 
   &-cat {
-    @include font-size(12,15);
+    @include font-size(12, 15);
 
     a {
       color: $color-secondary;
@@ -65,31 +65,31 @@ p {
           margin: 0 0 5px;
 
           dt {
-            @include font-size(20,26);
+            @include font-size(20, 26);
 
             font-weight: bold;
           }
 
           dd {
-            @include font-size(16,26);
+            @include font-size(16, 26);
             font-weight: bold;
           }
         }
 
         &-notation {
           dt {
-            @include font-size(14,26);
+            @include font-size(14, 26);
           }
 
           dd {
-            @include font-size(14,26);
+            @include font-size(14, 26);
           }
         }
 
         &-profile {
           p {
             margin: 0;
-            @include font-size(16,30);
+            @include font-size(16, 30);
           }
 
           &-link {
@@ -99,7 +99,7 @@ p {
       }
 
       a {
-        @include font-size(16,40);
+        @include font-size(16, 40);
 
         text-decoration: underline;
       }
@@ -109,29 +109,29 @@ p {
       .member {
         &-name {
           dt {
-            @include font-size(28,30);
+            @include font-size(28, 30);
 
             font-weight: bold;
           }
 
           dd {
-            @include font-size(18,36);
+            @include font-size(18, 36);
             font-weight: bold;
           }
         }
 
         &-notation {
           dt {
-            @include font-size(18,36);
+            @include font-size(18, 36);
           }
 
           dd {
-            @include font-size(18,36);
+            @include font-size(18, 36);
           }
         }
 
         &-profile {
-          @include font-size(16,30);
+          @include font-size(16, 30);
         }
       }
     }
@@ -142,7 +142,7 @@ p {
           dt {
             margin: 0 0 5px;
 
-            @include font-size(20,26);
+            @include font-size(20, 26);
 
             font-weight: bold;
           }
@@ -150,26 +150,26 @@ p {
           dd {
             margin: 0 0 5px;
 
-            @include font-size(16,26);
+            @include font-size(16, 26);
             font-weight: bold;
           }
         }
 
         &-notation {
           dt {
-            @include font-size(14,26);
+            @include font-size(14, 26);
           }
 
           dd {
             margin: 0 0 8px;
 
-            @include font-size(14,26);
+            @include font-size(14, 26);
           }
         }
       }
 
       a {
-        @include font-size(16,40);
+        @include font-size(16, 40);
 
         text-decoration: underline;
       }
@@ -181,7 +181,7 @@ p {
           dt {
             margin: 0 0 8px;
 
-            @include font-size(15,20);
+            @include font-size(15, 20);
 
             font-weight: bold;
           }
@@ -191,16 +191,16 @@ p {
           dt {
             margin: 0 0 8px;
 
-            @include font-size(15,20);
+            @include font-size(15, 20);
           }
 
           dd {
-            @include font-size(15,20);
+            @include font-size(15, 20);
           }
         }
 
         &-profile {
-          @include font-size(15,20);
+          @include font-size(15, 20);
         }
       }
     }
@@ -209,7 +209,7 @@ p {
       .member {
         &-name {
           dt {
-            @include font-size(20,32);
+            @include font-size(20, 32);
 
             font-weight: bold;
           }
@@ -217,17 +217,16 @@ p {
 
         &-notation {
           dt {
-            @include font-size(12,18);
-
+            @include font-size(12, 18);
           }
 
           dd {
-            @include font-size(12,18);
+            @include font-size(12, 18);
           }
         }
 
         &-profile {
-          @include font-size(16,32);
+          @include font-size(16, 32);
         }
       }
     }
@@ -236,7 +235,7 @@ p {
       .member {
         &-name {
           dt {
-            @include font-size(20,32);
+            @include font-size(20, 32);
 
             font-weight: bold;
           }
@@ -244,16 +243,16 @@ p {
 
         &-notation {
           dt {
-            @include font-size(12,32);
+            @include font-size(12, 32);
           }
 
           dd {
-            @include font-size(12,32);
+            @include font-size(12, 32);
           }
         }
 
         &-profile {
-          @include font-size(16,32);
+          @include font-size(16, 32);
         }
       }
     }
