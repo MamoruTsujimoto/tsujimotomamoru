@@ -16,3 +16,5 @@ export const MenuFlagProvider = (props: Props) => {
   const [openMenu, setOpenMenu] = useState<boolean>(false)
   return <MenuFlagContext.Provider value={{ openMenu, setOpenMenu }}>{children}</MenuFlagContext.Provider>
 }
+
+export default MenuFlagProvider
