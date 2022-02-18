@@ -165,7 +165,7 @@ const Root = styled.div`
   padding: 0;
   border: 1px solid #d0d0d4;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     grid-template-columns: 100%;
   }
 `

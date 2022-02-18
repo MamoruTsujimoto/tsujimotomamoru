@@ -40,7 +40,7 @@ const Root = styled.header`
   background: #fff;
   z-index: 1;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     border-bottom: none;
   }
 `

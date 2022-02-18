@@ -56,10 +56,19 @@ const StoryNew = ({ title, excerpt, category, coverImage, date, author, slug }: 
 
 const Section = styled.section`
   position: relative;
+  max-width: 100%;
   height: 580px;
+  margin: 50px auto 105px;
+  padding: 0 20px;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    margin-bottom: 52px;
+    padding: 0 0px;
     height: auto;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   }
 
   h1 {
@@ -70,7 +79,7 @@ const Section = styled.section`
     letter-spacing: 0.15em;
     color: #fff;
 
-    @media #{$small} {
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
       margin-bottom: 40px;
     }
 
@@ -115,7 +124,7 @@ const Section = styled.section`
     bottom: 25px;
     margin: auto;
 
-    @media #{$small} {
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
       position: static;
     }
   }
@@ -125,6 +134,61 @@ const Section = styled.section`
       color: #b7b7b7;
     }
   }
+
+  .btn {
+    display: block;
+
+    &-readmore {
+      display: block;
+      width: 130px;
+      padding: 10px 0 9px;
+
+      @include font-size(11, 11);
+
+      font-family: $font-family-raleway;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+      text-align: center;
+      color: #a1a1a1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: all 500ms 0s ease;
+    }
+
+    &-viewall {
+      width: 230px;
+      margin: 0 auto;
+
+      @include font-size(13, 13);
+
+      font-family: $font-family-raleway;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+      text-align: center;
+
+      a {
+        display: block;
+        padding: 15px 0 14px;
+        background-color: #000;
+        border: 1px solid #000;
+        color: #a1a1a1;
+        font-weight: bold;
+        transition: all 500ms 0s ease;
+
+        &:hover {
+          background-color: #fff;
+          color: #000;
+        }
+
+        @media #{$small} {
+          font-weight: normal;
+        }
+      }
+    }
+  }
 `
 
 const Article = styled.article`
@@ -132,7 +196,7 @@ const Article = styled.article`
     display: grid;
     grid-template-columns: 380px 1fr;
 
-    @media #{$small} {
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
       display: flex;
       flex-wrap: wrap;
     }
@@ -158,7 +222,7 @@ const Body = styled.div`
   padding: 50px;
   background-color: #222;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     order: 2;
     width: 100%;
     padding: 30px;
@@ -174,7 +238,7 @@ const Information = styled.div`
   width: calc(277 / 380 * 100%);
   margin: auto;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     position: static;
     width: 100%;
     margin: 0 0 50px;
@@ -205,7 +269,7 @@ const Picture = styled.div`
     filter: grayscale(100%);
     transition: all 1500ms 0s ease;
 
-    @media #{$small} {
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
       order: 1;
       filter: none;
       transition: none;
@@ -220,20 +284,20 @@ const Picture = styled.div`
     &.outline {
       border: 1px solid #222222;
 
-      @media #{$small} {
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
         border: none;
         border-top: 1px solid $color-border;
       }
     }
 
     &.right {
-      @media #{$small} {
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
         background-position: center right;
       }
     }
 
     &.left {
-      @media #{$small} {
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
         background-position: center left;
       }
     }

@@ -40,7 +40,7 @@ const Root = styled.div`
   z-index: 2;
   will-change: auto;
 
-  @media (max-width: ${styles.sizes.breakpoint.small}px) {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     width: 100%;
   }
 `
@@ -53,7 +53,7 @@ const Wrapper = styled.div`
     filter: blur(3px);
     transform: translateX(-350px);
 
-    @media #{$small} {
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
       transform: translateX(-100%);
     }
   }
@@ -65,7 +65,7 @@ const Main = styled.main`
   max-width: 1200px;
   margin: 0 auto;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     max-width: 100%;
   }
 

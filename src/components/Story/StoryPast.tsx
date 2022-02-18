@@ -51,6 +51,42 @@ const StoryPast = ({ posts }: Props) => {
 }
 
 const Section = styled.section`
+  position: relative;
+  max-width: 100%;
+  margin: 50px auto 105px;
+  padding: 0 20px;
+
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    margin-bottom: 52px;
+    padding: 0 0px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .section-title {
+    width: 500px;
+    margin: 0 auto 50px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #d0d0d4;
+
+    ${styles.mixins.fontSize(24, 24)}
+
+    font-family: ${styles.fonts.raleway};
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.2em;
+
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
+      width: 100%;
+      padding: 0;
+      border: none;
+    }
+  }
+
   article {
     position: relative;
     width: 100%;
@@ -61,7 +97,7 @@ const Section = styled.section`
       transform: translate(0, 0);
     }
 
-    @media #{$small} {
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
       margin-bottom: 35px;
       &:after {
         content: '⋯';
@@ -74,7 +110,7 @@ const Section = styled.section`
     &:last-of-type {
       margin-right: 0;
 
-      @media #{$small} {
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
         margin-bottom: 0;
 
         &:after {
@@ -93,7 +129,7 @@ const Section = styled.section`
 
       letter-spacing: 0.15em;
 
-      @media #{$small} {
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
         min-height: auto;
         max-height: auto;
       }
@@ -143,6 +179,20 @@ const Section = styled.section`
     .story-publish {
       color: #4b4b4b;
     }
+
+    .figure {
+      background-repeat: no-repeat;
+      background-position: top center;
+      background-size: cover;
+
+      &.no-image {
+        background-image: url(#{$IMG_PATH}/no-image.svg);
+        background-size: 100px auto;
+        background-position: center center;
+        border: 1px solid #ddd;
+      }
+    }
+
     &.other {
       min-height: 610px;
 
@@ -161,7 +211,7 @@ const Section = styled.section`
         &.outline {
           border: 1px solid $color-border;
 
-          @media #{$small} {
+          @media (max-width: ${styles.sizes.breakpoint.small}) {
             margin-top: 10px;
             border-top: 1px solid $color-border;
             border-bottom: 1px solid $color-border;

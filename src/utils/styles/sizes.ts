@@ -10,12 +10,12 @@ const sizes = {
     widthMain: '100%',
   },
   breakpoint: {
-    ssmall: '320',
-    xsmall: '375',
-    small: '768',
-    middle: '980',
-    large: '1200',
-    largeMax: '1201',
+    ssmall: '320px',
+    xsmall: '375px',
+    small: '768px',
+    middle: '980px',
+    large: '1200px',
+    largeMax: '1201px',
   },
 }
 
