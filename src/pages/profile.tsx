@@ -162,6 +162,7 @@ const Root = styled.div`
   display: grid;
   grid-template-columns: 25% 75%;
   width: 100%;
+  margin: 50px 0;
   padding: 0;
   border: 1px solid #d0d0d4;
 
