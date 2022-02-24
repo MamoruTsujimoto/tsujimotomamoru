@@ -4,6 +4,7 @@ import colors from 'utils/styles/colors'
 import config from 'utils/config'
 
 const TIMEOUT = config.setting.transition.timeout
+import mixins from 'utils/styles/mixins'
 
 const globalStyles = css`
   :root {
@@ -355,6 +356,36 @@ const globalStyles = css`
   .loading-indicator-enter-active {
     opacity: 1;
     transition: opacity ${TIMEOUT}ms;
+  }
+
+  // Headings
+  h1 {
+    ${mixins.fontSize(32, 44)}
+  }
+
+  h2 {
+    ${mixins.fontSize(22, 34)}
+  }
+
+  h3 {
+    ${mixins.fontSize(18, 32)}
+  }
+
+  h4 {
+    ${mixins.fontSize(14, 28)}
+  }
+
+  h5 {
+    ${mixins.fontSize(12, 26)}
+  }
+
+  h6 {
+    ${mixins.fontSize(10, 24)}
+  }
+
+  // Paragraph Text
+  p {
+    ${mixins.fontSize(16, 30)}
   }
 `
 

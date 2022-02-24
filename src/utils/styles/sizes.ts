@@ -1,14 +1,9 @@
 const sizes = {
   desktop: {
-    heightHeader: '122px',
-    heightFooter: '40px',
-    widthMain: '98rem',
+    base: '1440px',
+    single: '980px',
   },
-  mobile: {
-    heightHeader: '122px',
-    heightFooter: '40px',
-    widthMain: '100%',
-  },
+  mobile: {},
   breakpoint: {
     ssmall: '320px',
     xsmall: '375px',

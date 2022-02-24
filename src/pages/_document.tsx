@@ -18,12 +18,10 @@ export default class Document extends NextDocument {
           <meta property='og:type' content={config.info.ogp.type} />
           <meta name='twitter:card' content={config.info.twitter.card} />
 
-          <meta name='robots' content='noindex' />
-
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin='true' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&family=Monsieur+La+Doulaise&family=M+PLUS+1p&display=swap'
+            href='https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;400;500&family=Monsieur+La+Doulaise&family=M+PLUS+1p&family=Metrophobic&display=swap'
             rel='stylesheet'
           />
           <GlobalStyles styles={globalStyles} />

@@ -143,9 +143,9 @@ const Section = styled.section`
       width: 130px;
       padding: 10px 0 9px;
 
-      @include font-size(11, 11);
+      ${styles.mixins.fontSize(11, 11)}
 
-      font-family: $font-family-raleway;
+      font-family: ${styles.fonts.raleway};
 
       letter-spacing: 3px;
 
@@ -160,9 +160,9 @@ const Section = styled.section`
       width: 230px;
       margin: 0 auto;
 
-      @include font-size(13, 13);
+      ${styles.mixins.fontSize(13, 13)}
 
-      font-family: $font-family-raleway;
+      font-family: ${styles.fonts.raleway};
 
       letter-spacing: 3px;
 
