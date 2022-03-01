@@ -1,4 +1,5 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
 import { MenuFlagContext } from 'components/providers/MenuFlagProvider'
@@ -14,7 +15,19 @@ type Props = {
 }
 
 const Layout = ({ children }: Props) => {
-  const { openMenu } = useContext(MenuFlagContext)
+  const { openMenu, setOpenMenu } = useContext(MenuFlagContext)
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      if (openMenu) setOpenMenu(!openMenu)
+    }
+
+    router.events.on('routeChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  })
 
   return (
     <Root>
