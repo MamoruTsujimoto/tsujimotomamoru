@@ -10,6 +10,7 @@ export default class Document extends NextDocument {
     return (
       <Html lang='ja'>
         <Head prefix='og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website#'>
+          <meta name='dmca-site-verification' content='RUMrL05ScjlvOEpjWGlqRCtjeWhIakQwM0IwNnhuQ2FCcWhTY1VpOTZTOD01' />
           <meta name='theme-color' content='#ffffff' />
           <link rel='apple-touch-icon' sizes='180x180' href={config.info.icon.apple} />
           <link rel='icon' type='image/png' sizes='32x32' href={config.info.icon.fav32} />
