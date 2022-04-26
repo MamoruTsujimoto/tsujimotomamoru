@@ -3,11 +3,11 @@ slug: 'diary-001'
 title: 'ブログサイト開設しました🍾'
 excerpt: '学習と開発に１年近く費やしましたがようやく開設することができました！'
 category: 'diary'
-coverImage: '/img/posts/figure-14.jpg'
+coverImage: '/img/posts/diary-001.jpg'
 coverCaption: '2022-01-19 SKY'
 date: '2022-01-19'
 ogImage:
-  url: '/img/posts/figure-14.jpg'
+  url: '/img/posts/diary-001.jpg'
 weather: 'sun'
 ---
 
