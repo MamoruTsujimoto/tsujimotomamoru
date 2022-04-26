@@ -90,7 +90,7 @@ const Section = styled.section`
   article {
     position: relative;
     width: 100%;
-    min-height: 825px;
+    min-height: 500px;
 
     &.active {
       opacity: 1;
@@ -379,8 +379,7 @@ const Article = styled.article`
 
     &-figure {
       width: 100%;
-      height: 525px;
-      padding-top: 138.157894737%;
+      height: 250px;
       transition: all 1000ms 0s ease;
       filter: grayscale(100%);
 
