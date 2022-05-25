@@ -59,6 +59,14 @@ const Root = styled.div`
 `
 
 const Wrapper = styled.div`
+  display: grid;
+  grid:
+    'header' 86px
+    'main' 1fr
+    'footer' 82.5px
+    / 1fr;
+  gap: 8px;
+  height: 100vh;
   transition: 0.3s ease-in-out;
 
   &.is-open {
@@ -73,6 +81,7 @@ const Wrapper = styled.div`
 `
 
 const Main = styled.main`
+  grid-area: main;
   position: relative;
   width: 100%;
   max-width: 1200px;
