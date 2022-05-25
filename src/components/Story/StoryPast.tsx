@@ -23,8 +23,8 @@ const StoryPast = ({ posts }: Props) => {
       <h1 className='section-title'>articles</h1>
       <ArticleWrapper>
         {posts.map((post) => (
-          <Article key={post.slug} className='active'>
-            <Link as={`/posts/${post.slug}`} href='/posts/[slug]' passHref>
+          <Article key={post.date} className='active'>
+            <Link as={`/posts/${post.date}`} href={`/posts/${post.date}`} passHref>
               <a onClick={handleClick}>
                 <div className='story-figure figure' style={{ backgroundImage: `url(${post.coverImage})` }}></div>
                 <div className='story-entrance'>

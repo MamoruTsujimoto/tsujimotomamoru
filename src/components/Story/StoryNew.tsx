@@ -6,16 +6,14 @@ import styles from 'utils/styles'
 import DateFormatter from 'components/DateFormatter'
 
 type Props = {
+  date: string
   title: string
   excerpt: string
   category: string
   coverImage: string
-  date: string
-  author: Author
-  slug: string
 }
 
-const StoryNew = ({ title, excerpt, category, coverImage, date, author, slug }: Props) => {
+const StoryNew = ({ date, title, excerpt, category, coverImage }: Props) => {
   const handleClick = () => {
     gtag.event({
       action: 'click',
@@ -26,8 +24,8 @@ const StoryNew = ({ title, excerpt, category, coverImage, date, author, slug }: 
 
   return (
     <Section>
-      <Article id={slug}>
-        <Link as={`/posts/${slug}`} href='/posts/[slug]' passHref>
+      <Article id={date}>
+        <Link as={`/posts/${date}`} href={`/posts/${date}`} passHref>
           <a onClick={handleClick}>
             <Body>
               <span className='story-category'>{category}</span>

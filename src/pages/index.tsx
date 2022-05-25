@@ -34,13 +34,11 @@ const Index: NextPage<Props> = ({ allPosts }) => {
       <Layout>
         {newPost && (
           <StoryNew
+            date={newPost.date}
             title={newPost.title}
             excerpt={newPost.excerpt}
             category={newPost.category}
             coverImage={newPost.coverImage}
-            date={newPost.date}
-            author={newPost.author}
-            slug={newPost.slug}
           />
         )}
         {pastPost.length > 0 ? <StoryPast posts={pastPost} /> : ''}
@@ -50,7 +48,7 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPosts = getAllPosts(['title', 'excerpt', 'category', 'date', 'slug', 'author', 'coverImage', 'weather'])
+  const allPosts = getAllPosts(['date', 'title', 'excerpt', 'category', 'coverImage', 'weather'])
 
   return {
     props: { allPosts },

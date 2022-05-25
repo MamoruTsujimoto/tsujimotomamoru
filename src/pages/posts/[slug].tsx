@@ -16,7 +16,7 @@ type Props = {
 
 const Single = ({ post }: Props) => {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !post?.date) {
     return <ErrorPage statusCode={404} />
   }
   return (
@@ -30,7 +30,7 @@ const Single = ({ post }: Props) => {
               {post.title} | {config.info.siteName}
             </title>
             <meta name='description' content={post.excerpt} />
-            <meta property='og:url' content={`/posts/${post.slug}`} />
+            <meta property='og:url' content={`/posts/${post.date}`} />
             <meta property='og:image' content={post.ogImage.url} />
             <meta property='og:title' content={`${post.title} | ${config.info.siteName}`} />
             <meta property='og:description' content={post.excerpt} />
@@ -101,13 +101,12 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
-
+  const posts = getAllPosts(['date'])
   return {
-    paths: posts.map((posts) => {
+    paths: posts.map((post) => {
       return {
         params: {
-          slug: posts.slug,
+          slug: post.date,
         },
       }
     }),
