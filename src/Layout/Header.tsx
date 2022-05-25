@@ -33,6 +33,7 @@ const Header = () => {
 export default Header
 
 const Root = styled.header`
+  grid-area: header;
   position: relative;
   border-bottom: 1px solid #d0d0d4;
   background: #fff;
