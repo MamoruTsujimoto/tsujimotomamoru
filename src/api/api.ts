@@ -3,14 +3,9 @@ import { join } from 'path'
 import matter from 'gray-matter'
 
 const postsDirectory = join(process.cwd(), 'src/_posts')
-const aboutDirectory = join(process.cwd(), 'src/_about')
 
 export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
-}
-
-export function getAboutSlugs() {
-  return fs.readdirSync(aboutDirectory)
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
@@ -27,40 +22,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
-    if (field === 'slug') {
+    if (field === 'date') {
       items[field] = realSlug
     }
-    if (field === 'content') {
-      items[field] = content
-    }
 
-    if (data[field]) {
-      items[field] = data[field]
-    }
-  })
-
-  return items
-}
-
-export function getAboutBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.md$/, '')
-  console.log(realSlug)
-  const fullPath = join(aboutDirectory, `${realSlug}.md`)
-  console.log(fullPath)
-  const fileContents = fs.readFileSync(fullPath, 'utf8')
-  const { data, content } = matter(fileContents)
-
-  type Items = {
-    [key: string]: string
-  }
-
-  const items: Items = {}
-
-  // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = realSlug
-    }
     if (field === 'content') {
       items[field] = content
     }
@@ -77,15 +42,6 @@ export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
-  return posts
-}
-
-export function getAbout(fields: string[] = []) {
-  const slugs = getAboutSlugs()
-  const posts = slugs
-    .map((slug) => getAboutBySlug(slug, fields))
     // sort posts by date in descending order
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1))
   return posts
