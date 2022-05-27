@@ -16,6 +16,8 @@ type Props = {
 
 const Single = ({ post }: Props) => {
   const router = useRouter()
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const ogpImage = siteUrl + post.ogImage.url
   if (!router.isFallback && !post?.date) {
     return <ErrorPage statusCode={404} />
   }
@@ -30,11 +32,11 @@ const Single = ({ post }: Props) => {
               {post.title} | {config.info.siteName}
             </title>
             <meta name='description' content={post.excerpt} />
-            <meta property='og:url' content={`/posts/${post.date}`} />
-            <meta property='og:image' content={post.ogImage.url} />
+            <meta property='og:url' content={`${siteUrl}/posts/${post.date}`} />
+            <meta property='og:image' content={ogpImage} />
             <meta property='og:title' content={`${post.title} | ${config.info.siteName}`} />
             <meta property='og:description' content={post.excerpt} />
-            <meta name='twitter:image' content={post.ogImage.url} />
+            <meta name='twitter:image' content={ogpImage} />
           </Head>
           <SingleWrapper>
             <Layout>
