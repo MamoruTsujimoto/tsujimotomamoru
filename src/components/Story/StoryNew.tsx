@@ -130,6 +130,7 @@ const Section = styled.section`
   .story {
     &-category {
       color: #b7b7b7;
+      ${styles.mixins.fontSize(12, 24)}
     }
   }
 
@@ -240,6 +241,14 @@ const Information = styled.div`
     position: static;
     width: 100%;
     margin: 0 0 50px;
+  }
+
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    .story {
+      &-publish {
+        ${styles.mixins.fontSize(12, 24)}
+      }
+    }
   }
 
   p {
