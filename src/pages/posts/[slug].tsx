@@ -748,4 +748,13 @@ const Body = styled.div`
       text-align: right;
     }
   }
+
+  blockquote {
+    padding-left: 8px;
+    border-left: 5px solid #000;
+
+    p {
+      ${styles.mixins.fontSize(13, 24)}
+    }
+  }
 `
