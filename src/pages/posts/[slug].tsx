@@ -360,12 +360,23 @@ const Root = styled.article`
   }
 `
 const Header = styled.header`
+  width: 980px;
+  margin: 0 auto;
+
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    width: 100%;
+  }
+
   &:after {
     content: '⋯';
     display: block;
     margin: 0 0 20px;
     text-align: center;
     color: #333;
+
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
+      margin: 20px 0;
+    }
   }
 
   h1 {
