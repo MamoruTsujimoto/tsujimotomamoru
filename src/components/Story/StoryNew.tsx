@@ -243,9 +243,13 @@ const Information = styled.div`
     margin: 0 0 50px;
   }
 
-  @media (max-width: ${styles.sizes.breakpoint.small}) {
-    .story {
-      &-publish {
+  .story {
+    &-publish {
+      color: #bbbbbb;
+
+      ${styles.mixins.fontSize(12, 24)}
+
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
         ${styles.mixins.fontSize(12, 24)}
       }
     }
