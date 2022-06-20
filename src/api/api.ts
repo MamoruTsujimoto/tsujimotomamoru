@@ -8,6 +8,10 @@ export function getPostSlugs() {
   return fs.readdirSync(postsDirectory)
 }
 
+export function getPostLengts() {
+  return fs.readdirSync(postsDirectory).length
+}
+
 export function getPostBySlug(date: string, fields: string[] = []) {
   const realSlug = date.replace(/\.md$/, '')
   const fullPath = join(postsDirectory, `${realSlug}.md`)

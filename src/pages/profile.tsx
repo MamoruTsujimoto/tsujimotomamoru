@@ -1,9 +1,11 @@
-import type { NextPage } from 'next'
+import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
 import styled from '@emotion/styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+import { getPostLengts } from 'api/api'
 
 import config from 'utils/config'
 import styles from 'utils/styles'
@@ -11,7 +13,11 @@ import functions from 'utils/functions'
 
 import Layout from 'Layout/Layout'
 
-const Profile: NextPage = () => {
+type Props = {
+  diaryCount: number
+}
+
+const Profile: NextPage<Props> = (props) => {
   const Birthdate = {
     year: config.profile.birth.year,
     month: config.profile.birth.month,
@@ -19,6 +25,8 @@ const Profile: NextPage = () => {
   }
 
   const age = functions.Birthdate(Birthdate)
+
+  const { diaryCount } = props
 
   return (
     <>
@@ -116,8 +124,24 @@ const Profile: NextPage = () => {
                         </li>
                       </ul>
                     </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
                     <li>
-                      <h4>Contact</h4>
+                      <h3>Status</h3>
+                      <ul>
+                        <li>
+                          <span>Diary Count: {diaryCount}</span>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <ul>
+                    <li>
+                      <h3>Contact</h3>
                       <Socials>
                         <li>
                           <a href={config.external.github.link}>
@@ -297,3 +321,12 @@ const GratefulLife = styled.div`
 `
 
 export default Profile
+
+export const getStaticProps: GetStaticProps = async () => {
+  const diaryCount = getPostLengts()
+
+  return {
+    props: { diaryCount },
+    revalidate: 60,
+  }
+}
