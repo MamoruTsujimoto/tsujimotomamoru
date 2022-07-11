@@ -51,6 +51,10 @@ const Welcome = styled.div`
   position: relative;
   padding: 22px 20px 20px;
 
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    padding: 10px 10px 5px;
+  }
+
   h1 {
     position: relative;
     display: inline-block;

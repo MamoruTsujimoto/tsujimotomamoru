@@ -99,6 +99,8 @@ const Section = styled.section`
 
     @media (max-width: ${styles.sizes.breakpoint.small}) {
       margin-bottom: 35px;
+      padding: 0 10px;
+
       &:after {
         content: '⋯';
         display: block;

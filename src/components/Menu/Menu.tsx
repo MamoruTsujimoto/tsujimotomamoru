@@ -72,7 +72,7 @@ const Inner = styled.div`
   transform: translateZ(0);
   overflow: scroll;
 
-  @media #{$middle} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     width: 100%;
     background: rgba(0, 0, 0, 1);
   }

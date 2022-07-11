@@ -69,13 +69,22 @@ const Wrapper = styled.div`
   height: 100vh;
   transition: 0.3s ease-in-out;
 
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    grid:
+      'header' 55px
+      'main' 1fr
+      'footer' 82.5px
+      / 1fr;
+    gap: 5px;
+  }
+
   &.is-open {
     overflow: hidden;
     filter: blur(3px);
     transform: translateX(-350px);
 
     @media (max-width: ${styles.sizes.breakpoint.small}) {
-      transform: translateX(-100%);
+      transform: translateX(0);
     }
   }
 `
