@@ -7,7 +7,10 @@
         "sourceMap": true,
         "autoLabel": "dev-only",
         "labelFormat": "[local]",
-        "cssPropOptimization": true
+        "cssPropOptimization": true,
+        "ssr": true,
+        "displayName": true,
+        "preprocess": false
       }
     ]
   ]

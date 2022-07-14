@@ -120,6 +120,8 @@ const SingleWrapper = styled.div`
   main {
     max-width: 100%;
     margin: 0;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.18, 0.06, 0.23, 1);
   }
 `
 

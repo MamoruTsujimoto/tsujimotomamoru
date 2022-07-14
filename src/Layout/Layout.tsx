@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
@@ -17,6 +17,24 @@ type Props = {
 const Layout = ({ children }: Props) => {
   const { openMenu, setOpenMenu } = useContext(MenuFlagContext)
   const router = useRouter()
+  const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const handleStart = (url: string) => {
+      url !== router.pathname ? setLoading(true) : setLoading(false)
+    }
+    const handleComplete = () => setLoading(false)
+
+    router.events.on('routeChangeStart', handleStart)
+    router.events.on('routeChangeComplete', handleComplete)
+    router.events.on('routeChangeError', handleComplete)
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart)
+      router.events.off('routeChangeComplete', handleComplete)
+      router.events.off('routeChangeError', handleComplete)
+    }
+  }, [router])
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -24,6 +42,7 @@ const Layout = ({ children }: Props) => {
     }
 
     router.events.on('routeChangeComplete', handleRouteChange)
+
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
@@ -33,7 +52,7 @@ const Layout = ({ children }: Props) => {
     <Root>
       <Wrapper className={openMenu ? 'is-open' : ''}>
         <Header />
-        <Main className={openMenu ? 'blur' : ''}>{children}</Main>
+        <Main className={`${loading ? '' : 'in'}${openMenu ? 'blur' : ''}`}>{children}</Main>
         <Footer />
       </Wrapper>
       <Menu />
@@ -95,9 +114,16 @@ const Main = styled.main`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  opacity: 0;
+  transition: opacity 0.4s cubic-bezier(0.18, 0.06, 0.23, 1);
 
   @media (max-width: ${styles.sizes.breakpoint.small}) {
     max-width: 100%;
+  }
+
+  &.in {
+    transition: opacity 0.8s cubic-bezier(0.18, 0.06, 0.23, 1) 0.3s;
+    opacity: 1;
   }
 
   &.scale {
