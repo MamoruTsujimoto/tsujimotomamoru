@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
 
-import { MenuFlagContext } from 'components/Providers/MenuFlagProvider'
+import { MenuFlagContext } from 'components/providers/MenuFlagProvider'
 import Menu from 'components/Menu/Menu'
 
 import styles from 'utils/styles'
