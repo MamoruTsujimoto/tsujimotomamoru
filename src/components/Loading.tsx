@@ -19,10 +19,32 @@ const Wrapper = styled.div`
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  opacity: 1;
-  transition: opacity 500ms 0s ease;
+  opacity: 0;
+  animation: fade 3s ease-in forwards;
   background: #000;
   z-index: 100;
+
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+
+    // 50% {
+    //   opacity: 0;
+    // }
+
+    100% {
+      opacity: 0;
+    }
+
+    // 0%,
+    // 100% {
+    //   opacity: 1;
+    // }
+    // 50% {
+    //   opacity: 0;
+    // }
+  }
 `
 
 export default Loading

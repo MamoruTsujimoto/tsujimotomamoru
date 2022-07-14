@@ -1,9 +1,7 @@
 import { useContext } from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-
 import { MenuFlagContext } from 'components/Providers/MenuFlagProvider'
-
 import config from 'utils/config'
 import styles from 'utils/styles'
 
@@ -35,12 +33,13 @@ const Header = () => {
 export default Header
 
 const Root = styled.header`
+  grid-area: header;
   position: relative;
   border-bottom: 1px solid #d0d0d4;
   background: #fff;
   z-index: 1;
 
-  @media #{$small} {
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
     border-bottom: none;
   }
 `
@@ -51,6 +50,10 @@ const Welcome = styled.div`
   align-items: center;
   position: relative;
   padding: 22px 20px 20px;
+
+  @media (max-width: ${styles.sizes.breakpoint.small}) {
+    padding: 10px 10px 5px;
+  }
 
   h1 {
     position: relative;
