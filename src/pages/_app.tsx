@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 
-import { MenuFlagProvider } from 'components/Providers/MenuFlagProvider'
+import { MenuFlagProvider } from 'components/providers/MenuFlagProvider'
 
 import { usePageView, GoogleAnalytics } from 'lib/gtag'
 
