@@ -17,6 +17,8 @@ export default class Document extends NextDocument {
           <link rel='icon' type='image/png' sizes='16x16' href={config.info.icon.fav16} />
 
           <meta property='og:type' content={config.info.ogp.type} />
+          <meta name='twitter:site' content={config.info.twitter.site} />
+          <meta name='twitter:creator' content={config.info.twitter.creator} />
           <meta name='twitter:card' content={config.info.twitter.card} />
 
           <link rel='preconnect' href='https://fonts.googleapis.com' />
