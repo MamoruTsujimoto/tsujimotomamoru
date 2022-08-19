@@ -5,15 +5,16 @@ const config = {
     siteName: 'Tsujimoto Mamoru',
     siteNameFirst: 'Tsujimoto ',
     siteNameSecond: 'Mamoru',
-    siteDescription: '',
+    siteDescription: '個人日記',
     siteURL: 'https://tsujimotomamoru.com',
     ogp: {
       type: 'blog',
       image: '/ogpImage.png',
-      card: 'summary',
     },
     twitter: {
-      card: 'summary',
+      site: '@MamoruTsujimoto',
+      creator: '@MamoruTsujimoto',
+      card: 'summary_large_image',
     },
     icon: {
       apple: '/apple-touch-icon.png',
