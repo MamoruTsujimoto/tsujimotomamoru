@@ -49,7 +49,7 @@ const Root = styled.div`
   min-height: 100vh;
   transform: translateX(0);
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  background-color: #fff;
+  background-color: ${styles.colors.background};
   z-index: 2;
   will-change: auto;
 

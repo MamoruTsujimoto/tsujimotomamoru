@@ -9,7 +9,7 @@ import mixins from 'utils/styles/mixins'
 const globalStyles = css`
   :root {
     --main-content: 45rem;
-    --background: ${colors.primary};
+    --background: ${colors.background};
     --border: ${colors.border};
     --text: ${colors.tertiary};
   }

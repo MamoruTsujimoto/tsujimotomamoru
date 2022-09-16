@@ -35,8 +35,8 @@ export default Header
 const Root = styled.header`
   grid-area: header;
   position: relative;
-  border-bottom: 1px solid #d0d0d4;
-  background: #fff;
+  border-bottom: 1px solid #000;
+  background-color: ${styles.colors.background};
   z-index: 1;
 
   @media (max-width: ${styles.sizes.breakpoint.small}) {

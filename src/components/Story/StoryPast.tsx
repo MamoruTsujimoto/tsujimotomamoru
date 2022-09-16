@@ -69,7 +69,7 @@ const Section = styled.section`
     width: 500px;
     margin: 0 auto 50px;
     padding: 0 0 10px;
-    border-bottom: 1px solid #d0d0d4;
+    border-bottom: 1px solid #000;
 
     ${styles.mixins.fontSize(24, 24)}
 
@@ -155,7 +155,7 @@ const Section = styled.section`
         bottom: -15px;
         width: 100px;
         height: 2px;
-        background-color: #ddd;
+        background-color: #fff;
       }
     }
 
