@@ -362,6 +362,7 @@ const Root = styled.article`
     }
   }
 `
+
 const Header = styled.header`
   width: 980px;
   margin: 0 auto;
@@ -400,6 +401,7 @@ const Header = styled.header`
     }
   }
 `
+
 const Meta = styled.div`
   margin: 0;
 
@@ -482,7 +484,7 @@ const Meta = styled.div`
 `
 
 const Picture = styled.picture`
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   transition: 0.5s;
 
   .pictureCaption {
