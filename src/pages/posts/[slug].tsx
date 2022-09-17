@@ -51,10 +51,12 @@ const Single = ({ post }: Props) => {
                       <li>{post.category}</li>
                     </ul>
                   </Meta>
-                  <Figure>
-                    <Img className='outline' style={{ backgroundImage: `url(${post.coverImage})` }} />
-                    <figcaption>{post.coverCaption}</figcaption>
-                  </Figure>
+                  <Picture>
+                    <source srcSet={`${post.coverImage}`} media='(min-width: 769px)' />
+                    {post.coverImageSP && <source srcSet={`${post.coverImageSP}`} media='(max-width: 768px)' />}
+                    <img src={`${post.coverImage}`} alt='画像' />
+                    <div className='pictureCaption'>{post.coverCaption}</div>
+                  </Picture>
                 </Header>
                 <Body>
                   <div dangerouslySetInnerHTML={{ __html: post.content }} />
@@ -87,6 +89,7 @@ export async function getStaticProps({ params }: Params) {
     'content',
     'ogImage',
     'coverImage',
+    'coverImageSP',
     'coverCaption',
     'weather',
   ])
@@ -477,6 +480,57 @@ const Meta = styled.div`
     }
   }
 `
+
+const Picture = styled.picture`
+  margin: 10px auto 0;
+  transition: 0.5s;
+
+  .pictureCaption {
+    padding: 15px 10px;
+    opacity: 0;
+    transition: 0.5s;
+    text-align: right;
+
+    ${styles.mixins.fontSize(12, 12)}
+
+    font-weight: bold;
+
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
+      opacity: 1;
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 10px 90px -30px rgba(0, 0, 0, 0.4);
+
+    @media (max-width: ${styles.sizes.breakpoint.small}) {
+      box-shadow: none;
+    }
+
+    .outline {
+      border-color: #000;
+
+      @media (max-width: ${styles.sizes.breakpoint.small}) {
+        border-color: #e9e9eb;
+      }
+    }
+
+    .pictureCaption {
+      opacity: 1;
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  .aligncenter {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+  }
+`
+
 const Figure = styled.figure`
   margin: 10px auto 0;
   transition: 0.5s;
