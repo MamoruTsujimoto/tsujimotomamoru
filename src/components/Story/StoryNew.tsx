@@ -25,7 +25,7 @@ const StoryNew = ({ date, title, excerpt, category, coverImage }: Props) => {
   return (
     <Section>
       <Article id={date}>
-        <Link as={`/posts/${date}`} href={`/posts/${date}`} passHref>
+        <Link as={`/posts/${date}`} href={`/posts/${date}`} passHref scroll={false}>
           <a onClick={handleClick}>
             <Body>
               <span className='story-category'>{category}</span>
