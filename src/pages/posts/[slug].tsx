@@ -364,7 +364,7 @@ const Root = styled.article`
 `
 
 const Header = styled.header`
-  width: 980px;
+  width: 100%;
   margin: 0 auto;
 
   @media (max-width: ${styles.sizes.breakpoint.small}) {
@@ -385,7 +385,7 @@ const Header = styled.header`
 
   h1 {
     display: block;
-    margin: 40px auto 35px;
+    margin: 30px auto 0;
     width: ${styles.sizes.desktop.single};
     color: #404040;
     text-align: center;
@@ -487,6 +487,12 @@ const Picture = styled.picture`
   margin: 20px auto 0;
   transition: 0.5s;
 
+  img {
+    width: 100%;
+    max-height: 700px;
+    object-fit: cover;
+  }
+
   .pictureCaption {
     padding: 15px 10px;
     opacity: 0;
@@ -533,55 +539,6 @@ const Picture = styled.picture`
   }
 `
 
-const Figure = styled.figure`
-  margin: 10px auto 0;
-  transition: 0.5s;
-
-  figcaption {
-    padding: 15px 10px;
-    opacity: 0;
-    transition: 0.5s;
-    text-align: right;
-
-    ${styles.mixins.fontSize(12, 12)}
-
-    font-weight: bold;
-
-    @media (max-width: ${styles.sizes.breakpoint.small}) {
-      opacity: 1;
-      color: #fff;
-      background-color: #000;
-    }
-  }
-
-  &:hover {
-    box-shadow: 0 10px 90px -30px rgba(0, 0, 0, 0.4);
-
-    @media (max-width: ${styles.sizes.breakpoint.small}) {
-      box-shadow: none;
-    }
-
-    .outline {
-      border-color: #000;
-
-      @media (max-width: ${styles.sizes.breakpoint.small}) {
-        border-color: #e9e9eb;
-      }
-    }
-
-    figcaption {
-      opacity: 1;
-      color: #fff;
-      background-color: #000;
-    }
-  }
-
-  .aligncenter {
-    display: table;
-    margin-left: auto;
-    margin-right: auto;
-  }
-`
 const Img = styled.div`
   width: 100%;
   height: 600px;
