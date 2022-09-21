@@ -10,10 +10,10 @@ type Props = {
   title: string
   excerpt: string
   category: string
-  coverImage: string
+  coverEyeCatch: string
 }
 
-const StoryNew = ({ date, title, excerpt, category, coverImage }: Props) => {
+const StoryNew = ({ date, title, excerpt, category, coverEyeCatch }: Props) => {
   const handleClick = () => {
     gtag.event({
       action: 'click',
@@ -43,7 +43,7 @@ const StoryNew = ({ date, title, excerpt, category, coverImage }: Props) => {
               <div className='btn btn-readmore'>read more</div>
             </Body>
             <Picture>
-              <div className='new-image outline' style={{ backgroundImage: `url('${coverImage}` }}></div>
+              <div className='new-image outline' style={{ backgroundImage: `url('${coverEyeCatch}` }}></div>
             </Picture>
           </a>
         </Link>
