@@ -26,7 +26,7 @@ const StoryPast = ({ posts }: Props) => {
           <Article key={post.date} className='active'>
             <Link as={`/posts/${post.date}`} href={`/posts/${post.date}`} passHref scroll={false}>
               <a onClick={handleClick}>
-                <div className='story-figure figure' style={{ backgroundImage: `url(${post.coverImage})` }}></div>
+                <div className='story-figure figure' style={{ backgroundImage: `url(${post.coverPostImage})` }}></div>
                 <div className='story-entrance'>
                   <span className='story-category'>{post.category}</span>
                   <h1>{post.title}</h1>

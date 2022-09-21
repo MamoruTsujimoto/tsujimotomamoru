@@ -6,8 +6,9 @@ type PostType = {
   excerpt: string
   category: string
   date: string
-  coverImage: string
-  coverImageSP: string
+  coverEyeCatch: string
+  coverPostImage: string
+  coverPostImageSP: string
   coverCaption: string
   author: Author
   ogImage: {

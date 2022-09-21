@@ -52,9 +52,9 @@ const Single = ({ post }: Props) => {
                     </ul>
                   </Meta>
                   <Picture>
-                    <source srcSet={`${post.coverImage}`} media='(min-width: 769px)' />
-                    {post.coverImageSP && <source srcSet={`${post.coverImageSP}`} media='(max-width: 768px)' />}
-                    <img src={`${post.coverImage}`} alt='画像' />
+                    <source srcSet={`${post.coverPostImage}`} media='(min-width: 769px)' />
+                    {post.coverPostImageSP && <source srcSet={`${post.coverPostImageSP}`} media='(max-width: 768px)' />}
+                    <img src={`${post.coverPostImage}`} alt='画像' />
                     <div className='pictureCaption'>{post.coverCaption}</div>
                   </Picture>
                 </Header>
@@ -88,8 +88,8 @@ export async function getStaticProps({ params }: Params) {
     'author',
     'content',
     'ogImage',
-    'coverImage',
-    'coverImageSP',
+    'coverPostImage',
+    'coverPostImageSP',
     'coverCaption',
     'weather',
   ])

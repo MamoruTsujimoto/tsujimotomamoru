@@ -40,7 +40,7 @@ const Index: NextPage<Props> = ({ allPosts }) => {
               title={newPost.title}
               excerpt={newPost.excerpt}
               category={newPost.category}
-              coverImage={newPost.coverImage}
+              coverEyeCatch={newPost.coverEyeCatch}
             />
           )}
           {pastPost.length > 0 ? <StoryPast posts={pastPost} /> : ''}
@@ -51,7 +51,7 @@ const Index: NextPage<Props> = ({ allPosts }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPosts = getAllPosts(['date', 'title', 'excerpt', 'category', 'coverImage', 'weather'])
+  const allPosts = getAllPosts(['date', 'title', 'excerpt', 'category', 'coverEyeCatch', 'coverPostImage', 'weather'])
 
   return {
     props: { allPosts },
