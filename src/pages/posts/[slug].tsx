@@ -572,6 +572,8 @@ const Img = styled.div`
   }
 `
 const Body = styled.div`
+  margin-bottom: 200px;
+
   > * {
     width: ${styles.sizes.desktop.single};
     margin: 0 auto;
