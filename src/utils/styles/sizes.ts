@@ -1,7 +1,7 @@
 const sizes = {
   desktop: {
     base: '1440px',
-    single: '980px',
+    single: '800px',
   },
   mobile: {},
   breakpoint: {
