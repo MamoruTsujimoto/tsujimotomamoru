@@ -1,6 +1,9 @@
 import { useContext, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
+
 import { useRouter } from 'next/router'
 import styled from '@emotion/styled'
+import { motion, useAnimation } from 'framer-motion'
 
 import { MenuFlagContext } from 'components/Providers/MenuFlagProvider'
 import Menu from 'components/Menu/Menu'
@@ -8,6 +11,8 @@ import Menu from 'components/Menu/Menu'
 import styles from 'utils/styles'
 import Header from 'Layout/Header'
 import Footer from 'Layout/Footer'
+
+import animations from 'utils/animations'
 
 type Props = {
   preview?: boolean
@@ -18,22 +23,32 @@ const Layout = ({ children }: Props) => {
   const { openMenu, setOpenMenu } = useContext(MenuFlagContext)
   const router = useRouter()
 
+  const controls = useAnimation()
+  const { ref, inView } = useInView({
+    threshold: 0.25,
+    triggerOnce: true,
+  })
+
   useEffect(() => {
     const handleRouteChange = () => {
       if (openMenu) setOpenMenu(!openMenu)
     }
 
+    controls.start(inView ? 'visible' : 'hidden')
+
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  })
+  }, [controls, inView, setOpenMenu, openMenu, router.events])
 
   return (
     <Root>
       <Wrapper className={openMenu ? 'is-open' : ''}>
         <Header />
-        <Main className={openMenu ? 'blur' : ''}>{children}</Main>
+        <motion.div ref={ref} initial='hidden' animate={controls} variants={animations.fadeIn}>
+          <Main className={openMenu ? 'blur' : ''}>{children}</Main>
+        </motion.div>
         <Footer />
       </Wrapper>
       <Menu />

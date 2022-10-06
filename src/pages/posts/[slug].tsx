@@ -1,11 +1,15 @@
+import { useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import styled from '@emotion/styled'
+import { motion, useAnimation } from 'framer-motion'
 import { getPostBySlug, getAllPosts } from 'api/api'
 import Post from 'types/post'
 import config from 'utils/config'
 import functions from 'utils/functions'
+import animations from 'utils/animations'
 import DateFormatter from 'components/DateFormatter'
 import Layout from 'Layout/Layout'
 import styles from 'utils/styles'
@@ -18,6 +22,17 @@ const Single = ({ post }: Props) => {
   const router = useRouter()
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   const ogpImage = siteUrl + post.ogImage.url
+
+  const controls = useAnimation()
+  const { ref, inView } = useInView({
+    threshold: 0.25,
+    triggerOnce: true,
+  })
+
+  useEffect(() => {
+    controls.start(inView ? 'visible' : 'hidden')
+  }, [controls, inView])
+
   if (!router.isFallback && !post?.date) {
     return <ErrorPage statusCode={404} />
   }
@@ -58,9 +73,11 @@ const Single = ({ post }: Props) => {
                     <div className='pictureCaption'>{post.coverCaption}</div>
                   </Picture>
                 </Header>
-                <Body>
-                  <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                </Body>
+                <motion.div ref={ref} initial='hidden' animate={controls} variants={animations.fadeInUp}>
+                  <Body>
+                    <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                  </Body>
+                </motion.div>
               </Root>
             </Layout>
           </SingleWrapper>

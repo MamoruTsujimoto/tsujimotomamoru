@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
+import { motion } from 'framer-motion'
 import * as gtag from 'lib/gtag'
 import Post from 'types/post'
 import styles from 'utils/styles'
@@ -23,27 +24,40 @@ const StoryPast = ({ posts }: Props) => {
       <h1 className='section-title'>articles</h1>
       <ArticleWrapper>
         {posts.map((post) => (
-          <Article key={post.date} className='active'>
-            <Link as={`/posts/${post.date}`} href={`/posts/${post.date}`} passHref scroll={false}>
-              <a onClick={handleClick}>
-                <div className='story-figure figure' style={{ backgroundImage: `url(${post.coverPostImage})` }}></div>
-                <div className='story-entrance'>
-                  <span className='story-category'>{post.category}</span>
-                  <h1>{post.title}</h1>
-                  <div className='story-information'>
-                    <ul className='story-status'>
-                      <li>
-                        <span className='story-publish'>
-                          <DateFormatter dateString={post.date} />
-                        </span>
-                      </li>
-                    </ul>
-                    <p>{post.excerpt}</p>
+          <motion.div
+            key={post.date}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 0.6,
+                ease: 'easeInOut',
+              },
+            }}
+          >
+            <Article key={post.date} className='active'>
+              <Link as={`/posts/${post.date}`} href={`/posts/${post.date}`} passHref scroll={false}>
+                <a onClick={handleClick}>
+                  <div className='story-figure figure' style={{ backgroundImage: `url(${post.coverPostImage})` }}></div>
+                  <div className='story-entrance'>
+                    <span className='story-category'>{post.category}</span>
+                    <h1>{post.title}</h1>
+                    <div className='story-information'>
+                      <ul className='story-status'>
+                        <li>
+                          <span className='story-publish'>
+                            <DateFormatter dateString={post.date} />
+                          </span>
+                        </li>
+                      </ul>
+                      <p>{post.excerpt}</p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            </Link>
-          </Article>
+                </a>
+              </Link>
+            </Article>
+          </motion.div>
         ))}
       </ArticleWrapper>
     </Section>

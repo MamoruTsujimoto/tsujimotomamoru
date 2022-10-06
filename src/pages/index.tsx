@@ -2,8 +2,6 @@ import React from 'react'
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { motion } from 'framer-motion'
-
 import { getAllPosts } from 'api/api'
 import Post from 'types/post'
 
@@ -32,20 +30,18 @@ const Index: NextPage<Props> = ({ allPosts }) => {
         <meta property='og:description' content={config.info.siteDescription} />
         <meta name='twitter:image' content={config.info.ogp.image} />
       </Head>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-        <Layout>
-          {newPost && (
-            <StoryNew
-              date={newPost.date}
-              title={newPost.title}
-              excerpt={newPost.excerpt}
-              category={newPost.category}
-              coverEyeCatch={newPost.coverEyeCatch}
-            />
-          )}
-          {pastPost.length > 0 ? <StoryPast posts={pastPost} /> : ''}
-        </Layout>
-      </motion.div>
+      <Layout>
+        {newPost && (
+          <StoryNew
+            date={newPost.date}
+            title={newPost.title}
+            excerpt={newPost.excerpt}
+            category={newPost.category}
+            coverEyeCatch={newPost.coverEyeCatch}
+          />
+        )}
+        {pastPost.length > 0 ? <StoryPast posts={pastPost} /> : ''}
+      </Layout>
     </>
   )
 }
