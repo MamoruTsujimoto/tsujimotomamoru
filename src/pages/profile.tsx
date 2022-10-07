@@ -31,7 +31,7 @@ const Profile: NextPage<Props> = (props) => {
   return (
     <>
       <Head>
-        <title>Profile | {config.info.siteName}</title>
+        <title>{`Profile | ${config.info.siteName}`}</title>
         <meta name='description' content={config.info.siteDescription} />
         <meta property='og:url' content={config.info.siteURL} />
         <meta property='og:image' content={config.info.ogp.image} />

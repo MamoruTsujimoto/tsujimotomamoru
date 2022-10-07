@@ -46,7 +46,7 @@ const Layout = ({ children }: Props) => {
     <Root>
       <Wrapper className={openMenu ? 'is-open' : ''}>
         <Header />
-        <motion.div ref={ref} initial='hidden' animate={controls} variants={animations.fadeIn}>
+        <motion.div initial='hidden' animate='visible' variants={animations.fadeIn}>
           <Main className={openMenu ? 'blur' : ''}>{children}</Main>
         </motion.div>
         <Footer />

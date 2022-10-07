@@ -43,9 +43,7 @@ const Single = ({ post }: Props) => {
       ) : (
         <>
           <Head>
-            <title>
-              {post.title} | {config.info.siteName}
-            </title>
+            <title>{`${post.title} | ${config.info.siteName}`}</title>
             <meta name='description' content={post.excerpt} />
             <meta property='og:url' content={`${siteUrl}/posts/${post.date}`} />
             <meta property='og:image' content={ogpImage} />
