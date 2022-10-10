@@ -23,24 +23,16 @@ const Layout = ({ children }: Props) => {
   const { openMenu, setOpenMenu } = useContext(MenuFlagContext)
   const router = useRouter()
 
-  const controls = useAnimation()
-  const { ref, inView } = useInView({
-    threshold: 0.25,
-    triggerOnce: true,
-  })
-
   useEffect(() => {
     const handleRouteChange = () => {
       if (openMenu) setOpenMenu(!openMenu)
     }
 
-    controls.start(inView ? 'visible' : 'hidden')
-
     router.events.on('routeChangeComplete', handleRouteChange)
     return () => {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
-  }, [controls, inView, setOpenMenu, openMenu, router.events])
+  }, [setOpenMenu, openMenu, router.events])
 
   return (
     <Root>
@@ -96,7 +88,7 @@ const Wrapper = styled.div`
   &.is-open {
     overflow: hidden;
     filter: blur(3px);
-    transform: translateX(-350px);
+    //transform: translateX(-350px);
 
     @media (max-width: ${styles.sizes.breakpoint.small}) {
       transform: translateX(0);
