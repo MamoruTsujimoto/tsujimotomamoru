@@ -1,37 +1,55 @@
 import { useContext } from 'react'
 import Link from 'next/link'
 import styled from '@emotion/styled'
-
+import { motion, useAnimation } from 'framer-motion'
 import { MenuFlagContext } from 'components/Providers/MenuFlagProvider'
 import styles from 'utils/styles'
 
+import animations from 'utils/animations'
+
 const Menu = () => {
   const { openMenu, setOpenMenu } = useContext(MenuFlagContext)
+  const controls = useAnimation()
 
   const onClickMenu = () => {
     setOpenMenu(!openMenu)
+    console.log(openMenu)
   }
 
+  controls.start(openMenu ? 'visible' : 'hidden')
+
   return (
-    <Wrapper className={openMenu ? 'is-open' : ''}>
-      <Inner>
-        <Close onClick={onClickMenu}>
-          <span></span>
-        </Close>
-        <Body>
-          <Section>
-            <h3>pages</h3>
-            <ul>
-              <li>
-                <Link href='/profile' passHref>
-                  <a>profile</a>
-                </Link>
-              </li>
-            </ul>
-          </Section>
-        </Body>
-      </Inner>
-    </Wrapper>
+    <motion.div
+      className={openMenu ? 'is-open' : ''}
+      initial='hidden'
+      animate={controls}
+      variants={animations.slideRight}
+    >
+      <Wrapper>
+        <Inner>
+          <Close onClick={onClickMenu}>
+            <span></span>
+          </Close>
+          <Body>
+            <Section>
+              <h3>pages</h3>
+              <ul>
+                <li>
+                  <Link href='/profile' passHref>
+                    <a>profile</a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/archives' passHref>
+                    <a>archives</a>
+                  </Link>
+                </li>
+              </ul>
+            </Section>
+          </Body>
+        </Inner>
+      </Wrapper>
+    </motion.div>
   )
 }
 
@@ -44,9 +62,7 @@ const Wrapper = styled.div`
   min-height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  opacity: 0;
-  transition: opacity 500ms 0s ease;
-  visibility: hidden;
+  z-index: 9999;
 
   &.is-open {
     opacity: 1;
@@ -66,7 +82,7 @@ const Wrapper = styled.div`
 const Inner = styled.div`
   position: absolute;
   right: 0;
-  width: 350px;
+  width: 100%;
   min-height: 100%;
   background: rgba(0, 0, 0, 0.9);
   transform: translateZ(0);
@@ -80,18 +96,18 @@ const Inner = styled.div`
 
 const Close = styled.div`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 17px;
   display: inline-block;
   transition: all 0.4s;
   box-sizing: border-box;
   width: 50px;
-  height: 44px;
+  height: 50px;
   cursor: pointer;
 
   span {
     position: absolute;
-    top: 22px;
+    top: 25px;
     right: 15px;
     width: 20px;
     height: 1px;

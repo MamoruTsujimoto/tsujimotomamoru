@@ -49,7 +49,7 @@ const Welcome = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 22px 20px 20px;
+  padding: 18px 20px 18px;
 
   @media (max-width: ${styles.sizes.breakpoint.small}) {
     padding: 10px 10px 5px;

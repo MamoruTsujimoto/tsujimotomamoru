@@ -26,6 +26,7 @@ const config = {
     transition: {
       timeout: 500,
     },
+    postNum: 7,
   },
   profile: {
     names: 'Tsujimoto Mamoru',

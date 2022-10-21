@@ -8,9 +8,10 @@ import DateFormatter from 'components/DateFormatter'
 
 type Props = {
   posts: Post[]
+  title: string
 }
 
-const StoryPast = ({ posts }: Props) => {
+const StoryPast = ({ title, posts }: Props) => {
   const handleClick = () => {
     gtag.event({
       action: 'click',
@@ -21,7 +22,7 @@ const StoryPast = ({ posts }: Props) => {
 
   return (
     <Section>
-      <h1 className='section-title'>articles</h1>
+      <h1 className='section-title'>{title}</h1>
       <ArticleWrapper>
         {posts.map((post) => (
           <Article key={post.date} className='active'>
