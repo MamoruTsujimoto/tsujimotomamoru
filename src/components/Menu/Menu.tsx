@@ -39,6 +39,11 @@ const Menu = () => {
                     <a>profile</a>
                   </Link>
                 </li>
+                <li>
+                  <Link href='/archives' passHref>
+                    <a>archives</a>
+                  </Link>
+                </li>
               </ul>
             </Section>
           </Body>
